@@ -1,0 +1,12 @@
+.botoes {
+    height: 35px;
+    width: 90px;
+}
+
+.parallax {
+    background-image: url('./assets/imgpsh_fullsize_anim.png');
+    min-height: 455px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
