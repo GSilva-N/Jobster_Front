@@ -1,1 +1,40 @@
-<p>cadastro works!</p>
+<div class="sign-up-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 banner-sec">
+            </div>
+
+            <div class="col-md-7 login-sec">
+                <h2 class="text-center">Cadastre-se</h2>
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="text-uppercase">Nome Completo</label>
+                        <input type="text" class="form-control" name="username" placeholder="Nome" required="required"
+                            [(ngModel)]='user.nome'>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1" class="text-uppercase">Email</label>
+                        <input type="email" class="form-control" name="email" placeholder="Email" required="required"
+                            [(ngModel)]='user.email'>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1" class="text-uppercase">Senha</label>
+                        <input type="password" class="form-control" name="password" placeholder="Senha"
+                            required="required" (input)='conferirSenha($event)' value="{{senha}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1" class="text-uppercase">Confirmar senha</label>
+                        <input type="password" class="form-control" name="confirm_password"
+                            placeholder="Confirme a senha" required="required" [(ngModel)]='user.senha'>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input">
+                            <small>Lembre-me</small>
+                        </label>
+                        <button type="submit" class="btn btn-login float-right" (click)='cadastrar()'>Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
