@@ -1,11 +1,15 @@
+.navbar {
+    background-color: #ff8800;
+}
+
 .botoes {
     height: 35px;
     width: 90px;
 }
 
 .parallax {
-    background-image: url('./assets/imgpsh_fullsize_anim.png');
-    min-height: 455px;
+    background-image: url('./assets/jobster1.png');
+    min-height: 481px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
