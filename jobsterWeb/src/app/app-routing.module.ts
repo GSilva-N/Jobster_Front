@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },
   { path: 'meu-perfil', component: MeuPerfilComponent },
-  { path: 'post-tema', component: PostTemaComponent },
+  { path: 'cadastro-tema', component: PostTemaComponent }
 ];
 
 @NgModule({
