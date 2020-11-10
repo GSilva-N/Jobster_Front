@@ -13,6 +13,7 @@ import { PerfilLateralComponent } from './perfil-lateral/perfil-lateral.componen
 import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MeuPerfilComponent } from './meu-perfil/meu-perfil.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     FeedComponent,
     PerfilLateralComponent,
     LoginComponent,
-    CadastroComponent
+    CadastroComponent,
+    MeuPerfilComponent
   ],
   imports: [
     BrowserModule,
