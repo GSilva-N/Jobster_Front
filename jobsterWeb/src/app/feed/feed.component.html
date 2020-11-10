@@ -7,13 +7,14 @@
             <app-perfil-lateral></app-perfil-lateral>
         </div>
 
-        <!--  Onde colocar a ng model? -->  
+        <!--  Onde colocar a ng model? -->
 
         <div class="col-md-8 my-4 d-flex justify-content-center">
             <div class="card" style="width: 18rem;" *ngFor='let item of listaPostagens'>
                 <div class="card-body">
                     <h5 class="card-title">{{item.contato}}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">{{item.modalidade}}</h6>
+                    <p class="card-text"></p>
                     <p class="card-text">{{item.portfolio}}</p>
                     <a href="#" class="card-link">Link do card</a>
                     <a href="#" class="card-link">Outro link</a>

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Postagem } from '../model/Postagem';
+import { Tema } from '../model/Tema';
 import { PostagemService } from '../service/postagem.service';
+import { TemaService } from '../service/tema.service';
 
 @Component({
   selector: 'app-meu-perfil',
@@ -11,15 +13,20 @@ import { PostagemService } from '../service/postagem.service';
 export class MeuPerfilComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
+  tema: Tema = new Tema()
+  listaTemas: Tema[]
+  idTema: number
+
 
 
   constructor(
     private postagemService: PostagemService,
+    private temaService: TemaService,
     private router: Router
   ) { }
 
   ngOnInit() {
-
+    this.findAllTemas()
   }
 
   publicar() {
@@ -33,5 +40,17 @@ export class MeuPerfilComponent implements OnInit {
         this.router.navigate(['/feed'])
       })
     }
+  }
+
+  findAllTemas() {
+    this.temaService.getAllTemas().subscribe((resp: Tema[]) => {
+      this.listaTemas = resp
+    })
+  }
+
+  findByIdTema() {
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
+      this.tema = resp;
+    })
   }
 }

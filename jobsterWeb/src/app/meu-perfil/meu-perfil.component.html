@@ -30,9 +30,10 @@
                         <div class="form-group">
                             <label for="tema">Escolha um tema ou <a routerLink='/cadastro-tema'>Cadastre um novo</a>
                             </label>
-                            <select name="tema" id='tema' class="form-control">
-                                <option *ngFor='let item of ' value={{item.id}}>
-                                    {{item.descricao}}
+                            <select name="tema" id='tema' class="form-control" [(ngModel)]='idTema'
+                                (change)='findByIdTema()'>
+                                <option *ngFor='let item of listaTemas' value={{item.id}}>
+                                    {{item.titulo}}
                                 </option>
                             </select>
                         </div>
