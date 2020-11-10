@@ -9,27 +9,35 @@
         <div class="col-md-8 my-4 d-flex justify-content-center">
             <div class="card" style="width: 50rem;">
                 <div class="card-body">
-                    <h5 class="card-title text-center">Título do card</h5>
+                    <h5 class="card-title text-center">Informações</h5>
                     <form>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Contato</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="contato">
+                            <input type="text" class="form-control" name="contato" id="exampleFormControlInput1"
+                                placeholder="contato" [(ngModel)]='postagem.contato'>
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Portfólio</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea class="form-control" name="portfolio" id="exampleFormControlTextarea1" rows="3"
+                                [(ngModel)]='postagem.portfolio'></textarea>
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Modalidade</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1"
-                                placeholder="Modalidade">
+                            <input type="text" name="modalidade" class="form-control" id="exampleFormControlInput1"
+                                placeholder="Modalidade" [(ngModel)]='postagem.modalidade'>
                         </div>
+                        <select name="tema" id='tema' class="form-control">
+                            <option>
+
+                            </option>
+                        </select>
                         <div class="form-group">
                             <label for="exampleFormControlFile1">Inserir Imagem</label>
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            <input type="file" name="imagem" class="form-control-file" id="exampleFormControlFile1"
+                                [(ngModel)]='postagem.imagem'>
                         </div>
                     </form>
-                    <a href="#" class="btn btn-primary">Salvar</a>
+                    <a class="btn btn-primary" (click)='publicar()'>Salvar</a>
                 </div>
             </div>
         </div>
