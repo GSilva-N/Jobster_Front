@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MeuPerfilComponent } from './meu-perfil/meu-perfil.component';
+import { PostTemaComponent } from './post-tema/post-tema.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { MeuPerfilComponent } from './meu-perfil/meu-perfil.component';
     PerfilLateralComponent,
     LoginComponent,
     CadastroComponent,
-    MeuPerfilComponent
+    MeuPerfilComponent,
+    PostTemaComponent
   ],
   imports: [
     BrowserModule,
