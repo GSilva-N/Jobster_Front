@@ -26,11 +26,18 @@
                             <input type="text" name="modalidade" class="form-control" id="exampleFormControlInput1"
                                 placeholder="Modalidade" [(ngModel)]='postagem.modalidade'>
                         </div>
-                        <select name="tema" id='tema' class="form-control">
-                            <option>
 
-                            </option>
-                        </select>
+                        <div class="form-group">
+                            <label for="tema">Escolha um tema ou <a routerLink='/cadastro-tema'>Cadastre um novo</a>
+                            </label>
+                            <select name="tema" id='tema' class="form-control">
+                                <option *ngFor='let item of ' value={{item.id}}>
+                                    {{item.descricao}}
+                                </option>
+                            </select>
+                        </div>
+
+
                         <div class="form-group">
                             <label for="exampleFormControlFile1">Inserir Imagem</label>
                             <input type="file" name="imagem" class="form-control-file" id="exampleFormControlFile1"
