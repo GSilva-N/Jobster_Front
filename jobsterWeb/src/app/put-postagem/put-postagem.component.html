@@ -5,47 +5,44 @@
             <app-perfil-lateral></app-perfil-lateral>
         </div>
         <div class="col-md-8">
-
-            <div>
+            <form>
                 <div class="form-group">
-                    <label for="titulo">Contato</label>
-                    <input type="text" class="form-control" id="contato" aria-describedby="emailHelp"
-                        placeholder="Digite aqui o seu contato" [(ngModel)]="postagem.contato">
+                    <label for="exampleFormControlInput1">Contato</label>
+                    <input type="text"  name="contato" class="form-control" id="exampleFormControlInput1" placeholder=""
+                        [(ngModel)]="postagem.contato">
                 </div>
-
                 <div class="form-group">
-                    <label for="texto">Portfólio</label>
-                    <textarea class="form-control" id="portfolio" rows="3" placeholder="Digite aqui o seu portfólio"
+                    <label for="exampleFormControlTextarea1">Exemplo de textarea</label>
+                    <textarea class="form-control" name="portfolio" id="texto" rows="3" placeholder="Digite aqui o seu texto"
                         [(ngModel)]="postagem.portfolio"></textarea>
                 </div>
-
                 <div class="form-group">
-                    <label for="titulo">Modalidade</label>
-                    <input type="text" class="form-control" id="modalidade" aria-describedby="emailHelp"
-                        placeholder="Digite aqui a sua modalidade" [(ngModel)]="postagem.modalidade">
+                    <label for="exampleFormControlInput1">Modalidade</label>
+                    <input type="text"  name="modalidade" class="form-control" id="exampleFormControlInput1" placeholder=""
+                        [(ngModel)]="postagem.modalidade">
                 </div>
-
-                <div class="form-group m-0">
-                    <label class="" for="tema">Escolha uma profissão ou <a routerLink="/cadastrar-tema">Cadastre
+                <div class="form-group">
+                    <label class="text-monospace" for="tema">Escolha um tema ou <a routerLink="/cadastrar-tema">Cadastre
                             um novo</a></label>
                     <select name="tema" id='tema' [(ngModel)]="idTema" (change)="findByIdTema()" class="form-control">
                         <option *ngFor="let item of listaTemas" value={{item.id}}>
-                            {{item.titulo}}
+                            {{item.descricao}}
                         </option>
                     </select>
                 </div>
-                <!--
+        
                 <div class="form-group">
-                    <label for="exampleFormControlFile1">Inserir Imagem</label>
-                    <input type="file" name="imagem" class="form-control-file" id="exampleFormControlFile1"
-                        [(ngModel)]='postagem.imagem'>
+                    <label for="exampleFormControlFile1">Exemplo de input de arquivo</label>
+                    <input type="file" class="form-control-file" name="imagem" id="exampleFormControlFile1" [(ngModel)]="postagem.imagem">
                 </div>
-                    -->
 
                 <div class="d-flex justify-content-end mt-3">
                     <button type="button" class="btn btn-outline-info w-25" (click)="salvar()">Salvar</button>
                 </div>
-            </div>
+            
+        
+            </form>
+            
 
         </div>
 
