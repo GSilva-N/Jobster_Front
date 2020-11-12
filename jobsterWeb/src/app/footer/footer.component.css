@@ -1,5 +1,5 @@
 .page-footer {
-    background-color: #F69A37;
+    background: rgba(248, 245, 233, 0.924);
 }
 
 ul.social-network {
@@ -14,7 +14,9 @@ ul.social-network li {
     padding: 5px;
 }
 
-.faFacebook, .faLinkedin, .faInstagram {
+.faFacebook,
+.faLinkedin,
+.faInstagram {
     color: white;
 }
 
