@@ -1,3 +1,5 @@
+import { Tema } from './Tema'
+
 export class Postagem {
 
     public id: number
@@ -5,4 +7,6 @@ export class Postagem {
     public portfolio: string
     public modalidade: string
     public imagem: Blob
+    public tema: Tema
+    
 }

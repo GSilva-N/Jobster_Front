@@ -19,8 +19,8 @@ const routes: Routes = [
   { path: 'cadastro', component: CadastroComponent },
   { path: 'meu-perfil', component: MeuPerfilComponent },
   { path: 'cadastro-tema', component: PostTemaComponent },
-  { path: 'editar-postagem', component: PutPostagemComponent },
-  { path: 'deletar-postagem', component: DeletePostagemComponent },
+  { path: 'editar-postagem/:id', component: PutPostagemComponent },  
+  { path: 'deletar-postagem/:id', component: DeletePostagemComponent },
   { path: 'editar-tema', component: PutTemaComponent },
   { path: 'deletar-tema', component: DeleteTemaComponent }
 ];
