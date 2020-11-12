@@ -15,6 +15,10 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MeuPerfilComponent } from './meu-perfil/meu-perfil.component';
 import { PostTemaComponent } from './post-tema/post-tema.component';
+import { PutPostagemComponent } from './put-postagem/put-postagem.component';
+import { PutTemaComponent } from './put-tema/put-tema.component';
+import { DeletePostagemComponent } from './delete-postagem/delete-postagem.component';
+import { DeleteTemaComponent } from './delete-tema/delete-tema.component';
 
 
 @NgModule({
@@ -28,7 +32,11 @@ import { PostTemaComponent } from './post-tema/post-tema.component';
     LoginComponent,
     CadastroComponent,
     MeuPerfilComponent,
-    PostTemaComponent
+    PostTemaComponent,
+    PutPostagemComponent,
+    PutTemaComponent,
+    DeletePostagemComponent,
+    DeleteTemaComponent
   ],
   imports: [
     BrowserModule,
