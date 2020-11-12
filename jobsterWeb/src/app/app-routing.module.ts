@@ -21,8 +21,8 @@ const routes: Routes = [
   { path: 'cadastro-tema', component: PostTemaComponent },
   { path: 'editar-postagem', component: PutPostagemComponent },
   { path: 'deletar-postagem', component: DeletePostagemComponent },
-  { path: 'editar-tema', component: PutTemaComponent },
-  { path: 'deletar-tema', component: DeleteTemaComponent }
+  { path: 'editar-tema/:id', component: PutTemaComponent },
+  { path: 'deletar-tema/:id', component: DeleteTemaComponent }
 ];
 
 @NgModule({
