@@ -63,7 +63,7 @@
     margin-bottom: 30px;
     font-weight: 800;
     font-size: 30px;
-    color: #DE6262;
+    color: #F69A37;
 }
 
 .login-sec h2:after {
@@ -79,7 +79,7 @@
 }
 
 .btn-login {
-    background: #DE6262;
+    background: #F69A37;
     color: #fff;
     font-weight: 600;
 }
