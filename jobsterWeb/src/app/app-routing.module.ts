@@ -18,11 +18,12 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },
   { path: 'meu-perfil', component: MeuPerfilComponent },
-  { path: 'cadastro-tema', component: PostTemaComponent },
-  { path: 'editar-postagem', component: PutPostagemComponent },
-  { path: 'deletar-postagem', component: DeletePostagemComponent },
+  { path: 'cadastro-tema', component: PostTemaComponent }, 
   { path: 'editar-tema/:id', component: PutTemaComponent },
   { path: 'deletar-tema/:id', component: DeleteTemaComponent }
+  { path: 'editar-postagem/:id', component: PutPostagemComponent },  
+  { path: 'deletar-postagem/:id', component: DeletePostagemComponent }
+
 ];
 
 @NgModule({

@@ -16,7 +16,7 @@
                     <h6 class="card-subtitle mb-2 text-muted">{{item.modalidade}}</h6>
                     <p class="card-text"></p>
                     <p class="card-text">{{item.portfolio}}</p>
-                    <a href="#" class="card-link">Link do card</a>
+                    <a class="card-link" [routerLink]="['/editar-postagem', item.id]" >Editar</a>
                     <a href="#" class="card-link">Outro link</a>
                 </div>
             </div>
