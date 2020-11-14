@@ -1,3 +1,13 @@
 .card {
-    background-color: rgb(181, 188, 194);
+    background-color: rgb(255, 255, 255);
+}
+
+.bg {
+    background: rgba(224, 218, 162, 0.924);
+}
+
+.btn-login {
+    background: #F69A37;
+    color: #fff;
+    font-weight: 600;
 }
