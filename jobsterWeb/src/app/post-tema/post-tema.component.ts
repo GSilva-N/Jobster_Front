@@ -12,7 +12,7 @@ import { TemaService } from '../service/tema.service';
 export class PostTemaComponent implements OnInit {
 
   tema: Tema = new Tema()
-  idTema: number
+  listaTemas: Tema[]
 
   constructor(
     private temaService: TemaService,
@@ -20,9 +20,22 @@ export class PostTemaComponent implements OnInit {
     private alert: AlertasService
   ) { }
 
-  ngOnInit(): void {
-
+  ngOnInit() {
+    this.findAllTemas()
   }
+
+  findAllTemas() {
+    this.temaService.getAllTemas().subscribe((resp: Tema[]) => {
+      this.listaTemas = resp
+    })
+  }
+
+  findByIdTema() {
+    this.temaService.getByIdTema(this.tema.id).subscribe((resp: Tema) => {
+      this.tema = resp
+    })
+  }
+
   cadastrar() {
     if (this.tema.titulo == null) {
       this.alert.showAlertDanger('Preencha o campo titulo')

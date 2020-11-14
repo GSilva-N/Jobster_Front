@@ -1,4 +1,20 @@
 a {
     color: rgb(246, 154, 55) !important;
-    font-weight: bold
+    font-weight: bold;
+    font-size: 15pt
+}
+
+.btn-outline {
+    background-color: white;
+    color: rgb(246, 154, 55);
+    border-color: rgb(246, 154, 55);
+}
+
+.btn-outline:hover {
+    background-color: rgb(246, 154, 55);
+    color: white;
+}
+
+.form-control {
+    width: 400px;
 }
