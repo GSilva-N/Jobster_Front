@@ -2,6 +2,7 @@ import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Postagem } from '../model/Postagem';
+import { AlertasService } from '../service/alertas.service';
 import { PostagemService } from '../service/postagem.service';
 
 @Component({
@@ -18,28 +19,29 @@ export class DeletePostagemComponent implements OnInit {
   constructor(
     private postagemService: PostagemService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alert: AlertasService
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0, 0)
     let id: number = this.route.snapshot.params["id"]
     this.findByIdPostagem(id)
   }
-  findByIdPostagem(id: number){
-    this.postagemService.getByIdPostagem(id).subscribe ((resp: Postagem) => {
+  findByIdPostagem(id: number) {
+    this.postagemService.getByIdPostagem(id).subscribe((resp: Postagem) => {
       this.postagem = resp
-      
+
     })
 
   }
-  btnSim(){
-    this.postagemService.deletePostagem(this.postagem.id).subscribe (()=>{
+  btnSim() {
+    this.postagemService.deletePostagem(this.postagem.id).subscribe(() => {
       this.router.navigate(["/feed"])
-      alert('Postagem apagada com sucesso!')
+      this.alert.showAlertSuccess('Postagem apagada com sucesso!')
     })
   }
-  btnNao(){
+  btnNao() {
     this.router.navigate(["/feed"])
   }
 }
