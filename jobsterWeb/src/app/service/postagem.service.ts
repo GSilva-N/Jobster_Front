@@ -36,7 +36,7 @@ export class PostagemService {
   }
 
   getByModalidadePostagem(modalidade: string) {
-    return this.http.get(`http://localhost:8080/postagens/titulo/${modalidade}`, this.token)
+    return this.http.get(`http://localhost:8080/postagens/modalidade/${modalidade}`, this.token)
   }
 
 }

@@ -2,92 +2,96 @@
     <app-navbar></app-navbar>
 </div>
 <div class="container">
-
     <div class="row">
+
         <div class="col-md-4">
             <app-perfil-lateral></app-perfil-lateral>
         </div>
+
         <div class="col-md-8">
+
             <nav class="d-flex justify-content-center">
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-home-tab"
-                        data-toggle="tab" href="#minhas-postagens" role="tab" aria-controls="nav-home"
-                        aria-selected="true">Minhas Postagens</a>
+                        data-toggle="tab" href="#empresas" role="tab" aria-controls="nav-home"
+                        aria-selected="true">Empresas</a>
 
                     <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-profile-tab" data-toggle="tab"
-                        href="#postagens-temas" role="tab" aria-controls="nav-profile" aria-selected="false">Postagens
-                        por Tema</a>
+                        href="#cargos" role="tab" aria-controls="nav-profile" aria-selected="false">Cargos
+                    </a>
+                    <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-profile-tab" data-toggle="tab"
+                        href="#modalidade" role="tab" aria-controls="nav-profile" aria-selected="false">Modalidade</a>
                 </div>
             </nav>
 
             <div class="tab-content" id="nav-tabContent">
 
-                <!--Minhas Postagens-->
-                <div class="tab-pane fade show active" id="minhas-postagens" role="tabpanel"
+                <div class="tab-pane fade show active" id="empresas" role="tabpanel"
                     aria-labelledby="nav-postagens-tab">
                     <div class="row mt-3 mb-3">
-                        <div class="col-md-10 pr-1">
-                            <input class="form-control w-100" type="search" placeholder="Pesquisar Postagem"
+                        <div class="col-md-10 pr-0">
+                            <input class="form-control w-100" type="search" placeholder="Pesquisar postagem"
                                 aria-label="Pesquisar">
                         </div>
                         <div class="col-md-2 pl-0">
-                            <button class="btn btn-outline-success w-100" type="button"
-                                (click)='findByModalidadePostagem()'>Pesquisar</button>
+                            <button class="btn btn-outline-warning w-100" type="button">Pesquisar</button>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-12">
+
                             <div class="card mt-5 mb-5" *ngFor="let item of listaPostagens">
                                 <div class="card-header">
                                     <div class="row d-flex align-items-center">
                                         <div class="col-md-8">
-                                            <h5 class="card-title"></h5>
-                                            <small>Contato: {{item.contato}} </small>
+                                            <h5 class="card-title"> {{item.contato}} </h5>
+                                            <small>Tema: {{item.tema.descricao}} </small>
                                         </div>
+
                                     </div>
                                 </div>
 
                                 <div class="card-body">
-                                    <small id="texto" class="form-text m-0 text-muted mb-3 ">{{item.tema.titulo}}
-                                    </small>
-                                    <small id="texto" class="form-text m-0 text-muted mb-3 ">{{item.portfolio}}
-                                    </small>
-                                    <small id="texto" class="form-text m-0 text-muted mb-3 ">{{item.portfolio}}
+                                    <p class="card-text" aria-describedby="texto"> {{item.contato}} </p>
+                                    <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
                                     </small>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
 
-                <div class="tab-pane fade" id="postagens-temas" role="tabpanel" aria-labelledby="nav-postagens-tab">
+
+
+
+                <div class="tab-pane fade" id="cargos" role="tabpanel" aria-labelledby="nav-presenca-tab">
+
                     <div class="row mt-3 mb-3">
-                        <div class="col-md-10 pr-1">
-                            <input class="form-control w-100" type="search" placeholder="Pesquisar Postagem por Tema"
+                        <div class="col-md-10 pr-0">
+                            <input class="form-control w-100" type="search" placeholder="Pesquisar postagem"
                                 aria-label="Pesquisar">
                         </div>
                         <div class="col-md-2 pl-0">
-                            <button class="btn btn-outline-success w-100" type="button">Pesquisar</button>
+                            <button class="btn btn-outline-warning w-100" type="button">Pesquisar</button>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-md-12">
-                            <div>
+                        <div class="col-md-12" *ngFor="let item of listaTemas">
+                            <div *ngFor='let post of item.postagem'>
 
                                 <div class="card mt-5 mb-5">
                                     <div class="card-header">
                                         <div class="row d-flex align-items-center">
                                             <div class="col-md-12">
-                                                <h5 class="card-title"> </h5>
+                                                <h5 class="card-title"> {{post.contato}} </h5>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="card-body">
-                                        <p class="card-text" aria-describedby="texto"> </p>
+                                        <p class="card-text" aria-describedby="texto"> {{post.contato}} </p>
                                         <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
                                         </small>
                                     </div>
@@ -98,8 +102,45 @@
                     </div>
 
                 </div>
+                <div class="tab-pane fade" id="modalidade" role="tabpanel" aria-labelledby="nav-presenca-tab">
 
+                    <div class="row mt-3 mb-3">
+                        <div class="col-md-10 pr-0">
+                            <input class="form-control w-100" type="search" placeholder="Pesquisar postagem"
+                                aria-label="Pesquisar">
+                        </div>
+                        <div class="col-md-2 pl-0">
+                            <button class="btn btn-outline-warning w-100" type="button">Pesquisar</button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12" *ngFor="let item of listaTemas">
+                            <div *ngFor='let post of item.postagem'>
+
+                                <div class="card mt-5 mb-5">
+                                    <div class="card-header">
+                                        <div class="row d-flex align-items-center">
+                                            <div class="col-md-12">
+                                                <h5 class="card-title"> {{post.contato}} </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <p class="card-text" aria-describedby="texto"> {{post.contato}} </p>
+                                        <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
+                                        </small>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
+
         </div>
     </div>
 </div>
