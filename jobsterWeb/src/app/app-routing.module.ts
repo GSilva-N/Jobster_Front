@@ -7,6 +7,7 @@ import { FeedComponent } from './feed/feed.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MeuPerfilComponent } from './meu-perfil/meu-perfil.component';
+import { PesquisaComponent } from './pesquisa/pesquisa.component';
 import { PostTemaComponent } from './post-tema/post-tema.component';
 import { PutPostagemComponent } from './put-postagem/put-postagem.component';
 import { PutTemaComponent } from './put-tema/put-tema.component';
@@ -20,11 +21,13 @@ const routes: Routes = [
   { path: 'cadastro', component: CadastroComponent },
   { path: 'meu-perfil', component: MeuPerfilComponent },
   { path: 'cadastro-tema', component: PostTemaComponent },
-  { path: 'editar-postagem/:id', component: PutPostagemComponent },  
+  { path: 'editar-tema/:id', component: PutTemaComponent },
+  { path: 'deletar-tema/:id', component: DeleteTemaComponent },
+  { path: 'editar-postagem/:id', component: PutPostagemComponent },
   { path: 'deletar-postagem/:id', component: DeletePostagemComponent },
-  { path: 'editar-tema', component: PutTemaComponent },
-  { path: 'deletar-tema', component: DeleteTemaComponent },
-  { path: 'sobre-nos', component: SobreNosComponent}
+  { path: 'sobre-nos', component: SobreNosComponent},
+  { path: 'pesquisa', component: PesquisaComponent }
+
 ];
 
 @NgModule({

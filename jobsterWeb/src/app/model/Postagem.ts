@@ -1,4 +1,5 @@
 import { Tema } from './Tema'
+import { User } from './User'
 
 export class Postagem {
 
@@ -8,5 +9,6 @@ export class Postagem {
     public modalidade: string
     public imagem: Blob
     public tema: Tema
-    
+    public usuario: User
+
 }

@@ -21,17 +21,22 @@ export class PostagemService {
     return this.http.post('http://localhost:8080/postagens', postagem, this.token)
   }
 
-  getByIdPostagem(id: number){
+  getByIdPostagem(id: number) {
     return this.http.get(`http://localhost:8080/postagens/${id}`, this.token)
 
   }
 
-  putPostagem(postagem: Postagem){
+  putPostagem(postagem: Postagem) {
     return this.http.put(`http://localhost:8080/postagens/${postagem.id}`, postagem, this.token
     )
   }
 
-  deletePostagem(id: number){
+  deletePostagem(id: number) {
     return this.http.delete(`http://localhost:8080/postagens/${id}`, this.token)
   }
+
+  getByModalidadePostagem(modalidade: string) {
+    return this.http.get(`http://localhost:8080/postagens/modalidade/${modalidade}`, this.token)
+  }
+
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
+import { AlertasService } from '../service/alertas.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 
@@ -13,16 +14,19 @@ import { TemaService } from '../service/tema.service';
 export class MeuPerfilComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
+  listaPostagens: Postagem[]
+
+
   tema: Tema = new Tema()
   listaTemas: Tema[]
   idTema: number
 
 
-
   constructor(
     private postagemService: PostagemService,
     private temaService: TemaService,
-    private router: Router
+    private router: Router,
+    private alert: AlertasService
   ) { }
 
   ngOnInit() {
@@ -30,16 +34,28 @@ export class MeuPerfilComponent implements OnInit {
   }
 
   publicar() {
+
+    this.tema.id = this.idTema
+    this.postagem.tema = this.tema
+
     if (this.postagem.contato == null || this.postagem.portfolio == null || this.postagem.modalidade == null) {
-      alert('Preencha os campos: Contato, portfolio e modalidade para prosseguir!')
+      this.alert.showAlertDanger('Preencha os campos: Contato, portfolio e modalidade para prosseguir!')
     } else {
       this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
+
         this.postagem = resp
         this.postagem = new Postagem()
-        alert('Postagem realizada com sucesso!')
+        this.alert.showAlertSuccess('Postagem realizada com sucesso!')
+        this.findAllPostagens()
         this.router.navigate(['/feed'])
       })
     }
+  }
+
+  findAllPostagens() {
+    this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
+      this.listaPostagens = resp
+    })
   }
 
   findAllTemas() {
@@ -50,7 +66,7 @@ export class MeuPerfilComponent implements OnInit {
 
   findByIdTema() {
     this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
-      this.tema = resp;
+      this.tema = resp
     })
   }
 }
