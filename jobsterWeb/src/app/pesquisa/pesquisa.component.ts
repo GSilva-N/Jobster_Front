@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
+import { User } from '../model/User';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 
@@ -21,6 +22,8 @@ export class PesquisaComponent implements OnInit {
   listaTemas: Tema[]
   tituloTema: string
 
+  listaUser: User[]
+
   constructor(
     private postagemService: PostagemService,
     private temaService: TemaService
@@ -30,6 +33,7 @@ export class PesquisaComponent implements OnInit {
 
     window.scroll(0, 0)
     this.findAllPostagens()
+    this.findAllTemas()
 
   }
 
