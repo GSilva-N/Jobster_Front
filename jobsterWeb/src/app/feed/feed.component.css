@@ -1,0 +1,20 @@
+/*#F69A37 - laranja titulos e botões*/
+
+
+
+.bg{
+    background: linear-gradient(to bottom, rgba(114, 116, 116, 0.5) 0%, rgba(246, 154, 55, 0.88) 100%)
+}
+.card-header{
+    background: #F69A37
+}
+
+.btn-sim{
+
+}
+
+.card-footer{
+    background: #F69A37 ;
+    display: flex ;
+    justify-content: space-around;
+}

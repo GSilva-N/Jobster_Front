@@ -10,6 +10,7 @@ import { MeuPerfilComponent } from './meu-perfil/meu-perfil.component';
 import { PostTemaComponent } from './post-tema/post-tema.component';
 import { PutPostagemComponent } from './put-postagem/put-postagem.component';
 import { PutTemaComponent } from './put-tema/put-tema.component';
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'editar-postagem/:id', component: PutPostagemComponent },  
   { path: 'deletar-postagem/:id', component: DeletePostagemComponent },
   { path: 'editar-tema', component: PutTemaComponent },
-  { path: 'deletar-tema', component: DeleteTemaComponent }
+  { path: 'deletar-tema', component: DeleteTemaComponent },
+  { path: 'sobre-nos', component: SobreNosComponent}
 ];
 
 @NgModule({
