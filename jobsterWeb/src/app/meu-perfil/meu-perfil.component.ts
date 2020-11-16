@@ -14,11 +14,12 @@ import { TemaService } from '../service/tema.service';
 export class MeuPerfilComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
+  listaPostagens: Postagem[]
+
 
   tema: Tema = new Tema()
   listaTemas: Tema[]
   idTema: number
-
 
 
   constructor(
@@ -33,16 +34,28 @@ export class MeuPerfilComponent implements OnInit {
   }
 
   publicar() {
+
+    this.tema.id = this.idTema
+    this.postagem.tema = this.tema
+
     if (this.postagem.contato == null || this.postagem.portfolio == null || this.postagem.modalidade == null) {
       this.alert.showAlertDanger('Preencha os campos: Contato, portfolio e modalidade para prosseguir!')
     } else {
       this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
+
         this.postagem = resp
         this.postagem = new Postagem()
         this.alert.showAlertSuccess('Postagem realizada com sucesso!')
+        this.findAllPostagens()
         this.router.navigate(['/feed'])
       })
     }
+  }
+
+  findAllPostagens() {
+    this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
+      this.listaPostagens = resp
+    })
   }
 
   findAllTemas() {
@@ -53,7 +66,7 @@ export class MeuPerfilComponent implements OnInit {
 
   findByIdTema() {
     this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
-      this.tema = resp;
+      this.tema = resp
     })
   }
 }

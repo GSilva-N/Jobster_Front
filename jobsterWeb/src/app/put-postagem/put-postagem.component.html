@@ -8,41 +8,42 @@
             <form>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Contato</label>
-                    <input type="text"  name="contato" class="form-control" id="exampleFormControlInput1" placeholder=""
+                    <input type="text" name="contato" class="form-control" id="exampleFormControlInput1" placeholder=""
                         [(ngModel)]="postagem.contato">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Exemplo de textarea</label>
-                    <textarea class="form-control" name="portfolio" id="texto" rows="3" placeholder="Digite aqui o seu texto"
-                        [(ngModel)]="postagem.portfolio"></textarea>
+                    <textarea class="form-control" name="portfolio" id="texto" rows="3"
+                        placeholder="Digite aqui o seu texto" [(ngModel)]="postagem.portfolio"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Modalidade</label>
-                    <input type="text"  name="modalidade" class="form-control" id="exampleFormControlInput1" placeholder=""
-                        [(ngModel)]="postagem.modalidade">
+                    <input type="text" name="modalidade" class="form-control" id="exampleFormControlInput1"
+                        placeholder="" [(ngModel)]="postagem.modalidade">
                 </div>
                 <div class="form-group">
-                    <label class="text-monospace" for="tema">Escolha um tema ou <a routerLink="/cadastrar-tema">Cadastre
+                    <label class="text" for="tema">Escolha um tema ou <a routerLink="/cadastrar-tema">Cadastre
                             um novo</a></label>
                     <select name="tema" id='tema' [(ngModel)]="idTema" (change)="findByIdTema()" class="form-control">
                         <option *ngFor="let item of listaTemas" value={{item.id}}>
-                            {{item.descricao}}
+                            {{item.titulo}}
                         </option>
                     </select>
                 </div>
-        
+
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Exemplo de input de arquivo</label>
-                    <input type="file" class="form-control-file" name="imagem" id="exampleFormControlFile1" [(ngModel)]="postagem.imagem">
+                    <input type="file" class="form-control-file" name="imagem" id="exampleFormControlFile1"
+                        [(ngModel)]="postagem.imagem">
                 </div>
 
                 <div class="d-flex justify-content-end mt-3">
                     <button type="button" class="btn btn-outline-info w-25" (click)="salvar()">Salvar</button>
                 </div>
-            
-        
+
+
             </form>
-            
+
 
         </div>
 
