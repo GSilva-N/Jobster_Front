@@ -11,15 +11,15 @@ import { TemaService } from '../service/tema.service';
 })
 export class PesquisaComponent implements OnInit {
 
-  modalidade: string
+
   postagem: Postagem = new Postagem()
+  listaPostagens: Postagem[]
+  modalidade: string
+
 
   tema: Tema = new Tema()
   listaTemas: Tema[]
   tituloTema: string
-
-
-  listaPostagens: Postagem[]
 
   constructor(
     private postagemService: PostagemService,

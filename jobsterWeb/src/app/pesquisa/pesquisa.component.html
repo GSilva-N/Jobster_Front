@@ -3,13 +3,10 @@
 </div>
 <div class="container">
     <div class="row">
-
         <div class="col-md-4">
             <app-perfil-lateral></app-perfil-lateral>
         </div>
-
         <div class="col-md-8">
-
             <nav class="d-flex justify-content-center">
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-home-tab"
@@ -23,9 +20,8 @@
                         href="#modalidade" role="tab" aria-controls="nav-profile" aria-selected="false">Modalidade</a>
                 </div>
             </nav>
-
+            <!--Empresas-->
             <div class="tab-content" id="nav-tabContent">
-
                 <div class="tab-pane fade show active" id="empresas" role="tabpanel"
                     aria-labelledby="nav-postagens-tab">
                     <div class="row mt-3 mb-3">
@@ -38,109 +34,37 @@
                         </div>
                     </div>
 
+
                     <div class="row">
                         <div class="col-md-12">
-
-                            <div class="card mt-5 mb-5" *ngFor="let item of listaPostagens">
-                                <div class="card-header">
-                                    <div class="row d-flex align-items-center">
-                                        <div class="col-md-8">
-                                            <h5 class="card-title"> {{item.contato}} </h5>
-                                            <small>Tema: {{item.tema.descricao}} </small>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="card-body">
-                                    <p class="card-text" aria-describedby="texto"> {{item.contato}} </p>
-                                    <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-                <div class="tab-pane fade" id="cargos" role="tabpanel" aria-labelledby="nav-presenca-tab">
-
-                    <div class="row mt-3 mb-3">
-                        <div class="col-md-10 pr-0">
-                            <input class="form-control w-100" type="search" placeholder="Pesquisar postagem"
-                                aria-label="Pesquisar">
-                        </div>
-                        <div class="col-md-2 pl-0">
-                            <button class="btn btn-outline-warning w-100" type="button">Pesquisar</button>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12" *ngFor="let item of listaTemas">
-                            <div *ngFor='let post of item.postagem'>
-
+                            <div *ngFor="let item of listaPostagens">
                                 <div class="card mt-5 mb-5">
                                     <div class="card-header">
                                         <div class="row d-flex align-items-center">
-                                            <div class="col-md-12">
-                                                <h5 class="card-title"> {{post.contato}} </h5>
+                                            <div class="col-md-8">
+                                                <h5 class="card-title"> {{item.contato}} </h5>
+                                                <small id="texto"
+                                                    class="form-text m-0 text-muted mb-3 text-monospace">{{item.tema.titulo}}</small>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="card-body">
-                                        <p class="card-text" aria-describedby="texto"> {{post.contato}} </p>
-                                        <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
+                                        <p class="card-text" aria-describedby="texto">Portfolio</p>
+                                        <small id="texto"
+                                            class="form-text m-0 text-muted mb-3 text-monospace">{{item.portfolio}}
+                                        </small>
+                                        <small id="texto"
+                                            class="form-text m-0 text-muted mb-3 text-monospace">{{item.modalidade}}
                                         </small>
                                     </div>
-
                                 </div>
                             </div>
+
                         </div>
                     </div>
-
-                </div>
-                <div class="tab-pane fade" id="modalidade" role="tabpanel" aria-labelledby="nav-presenca-tab">
-
-                    <div class="row mt-3 mb-3">
-                        <div class="col-md-10 pr-0">
-                            <input class="form-control w-100" type="search" placeholder="Pesquisar postagem"
-                                aria-label="Pesquisar">
-                        </div>
-                        <div class="col-md-2 pl-0">
-                            <button class="btn btn-outline-warning w-100" type="button">Pesquisar</button>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12" *ngFor="let item of listaTemas">
-                            <div *ngFor='let post of item.postagem'>
-
-                                <div class="card mt-5 mb-5">
-                                    <div class="card-header">
-                                        <div class="row d-flex align-items-center">
-                                            <div class="col-md-12">
-                                                <h5 class="card-title"> {{post.contato}} </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card-body">
-                                        <p class="card-text" aria-describedby="texto"> {{post.contato}} </p>
-                                        <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
-                                        </small>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
-
         </div>
     </div>
 </div>
