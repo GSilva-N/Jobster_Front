@@ -34,30 +34,23 @@
                         </div>
                     </div>
 
-
                     <div class="row">
                         <div class="col-md-12">
-                            <div *ngFor="let item of listaPostagens">
-                                <div class="card mt-5 mb-5">
-                                    <div class="card-header">
-                                        <div class="row d-flex align-items-center">
-                                            <div class="col-md-8">
-                                                <h5 class="card-title">{{item.contato}}</h5>
-                                                <small id="texto"
-                                                    class="form-text m-0 text-muted mb-3">{{item.tema.titulo}}</small>
-                                            </div>
+                            <div class="card mt-5" *ngFor="let item of listaPostagens">
+                                <div class="card-header">
+                                    <div class="row d-flex align-items-center">
+                                        <div class="col-md-8">
+                                            <h5 class="card-title">{{item.tema.titulo}}</h5>
+                                            <small>{{item.contato}}</small>
                                         </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="card-text" aria-describedby="texto">Portfolio</p>
-                                        <small id="texto" class="form-text m-0 text-muted mb-3 ">{{item.portfolio}}
-                                        </small>
-                                        <small id="texto" class="form-text m-0 text-muted mb-3 ">{{item.modalidade}}
-                                        </small>
+
                                     </div>
                                 </div>
+                                <div class="card-body">
+                                    <small>{{item.portfolio}}</small>
+                                    <small>{{item.modalidade}}</small>
+                                </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
