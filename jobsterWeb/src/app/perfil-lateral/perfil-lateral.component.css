@@ -1,4 +1,5 @@
-.list-group-item{
-    background-color:  #F69A37;   
-    text-color: white;
+.list-group-item {
+    background-color: #F69A37;
+    color: white;
+    font-weight: bold;
 }

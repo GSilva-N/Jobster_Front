@@ -1,7 +1,7 @@
 import { AstMemoryEfficientTransformer } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ElementArrayFinder } from 'protractor';
+import { environment } from './../../environments/environment.prod';
 import { UserLogin } from '../model/UserLogin';
 import { AuthService } from '../service/auth.service';
 
@@ -20,16 +20,16 @@ export class LoginComponent implements OnInit {
 
   ) { }
 
-  ngOnInit(){
+  ngOnInit() {
 
   }
 
-  entrar(){
+  entrar() {
     this.authService.logar(this.userLogin).subscribe((resp: UserLogin) => {
       this.userLogin = resp
       localStorage.setItem('token', this.userLogin.token)
       this.router.navigate(['/feed'])
     })
-   
- }
+
+  }
 }

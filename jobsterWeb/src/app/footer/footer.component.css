@@ -1,36 +1,32 @@
-.page-footer{
-    background-color:  rgba(246, 154, 55, 0.88);
+.page-footer {
+  background-color: rgba(246, 154, 55, 0.88);
 }
 
 ul.social-network {
-    
-    list-style: none;
-    display: inline;
-    padding: 0;
-  }
-  ul.social-network li {
-    display: inline;
-    margin: 0;
-    padding: 5px;
-  }
-  .faFacebook,
-  .faLinkedin,
-  .faInstagram {
-    color: white;
-    margin-top: 10px
-    ;
-  }
-  
-  .faFacebook:hover {
-    color: #BEBEBE;
-  }
-  .faLinkedin:hover {
-    color: #BEBEBE;
-  }
-  .faInstagram:hover {
-    color: #BEBEBE;
-  }
+  list-style: none;
+  display: inline;
+  padding: 0;
+}
 
-  .juntar{
-    margin: 0;
-  }
+ul.social-network li {
+  display: inline;
+  margin: 0;
+  padding: 5px;
+}
+
+.faFacebook, .faLinkedin, .faInstagram {
+  color: white;
+  margin-top: 10px;
+}
+
+.faFacebook:hover {
+  color: #BEBEBE;
+}
+
+.faLinkedin:hover {
+  color: #BEBEBE;
+}
+
+.faInstagram:hover {
+  color: #BEBEBE;
+}
