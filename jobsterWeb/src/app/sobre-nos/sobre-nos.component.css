@@ -4,6 +4,7 @@
 
 .parallax {
     background-image: url(https://www.nappy.co/wp-content/uploads/2017/06/olu-eletu-134760.jpg);
+
     min-height: 450px; 
     background-attachment: fixed;
     background-position: center;
@@ -12,19 +13,35 @@
   }
 
 
-
-.jumbotron1{
-    height: 300px;
-}
-
 .jumbotron2{
     background-color: whitesmoke;
     height: 500px;
 }
+.jumbo-texto{
+    font-size: larger;
+  
+}
+.jumbo-texto2{
+    font-size: x-large;
+    font-weight: bold;
+    ;
+}
 
 .jumbo-titulo1{
-
+  text-color: rgb(246,154,55);
 }
+
+.card-title{
+   
+}
+
+
+.btn-sobre{
+    background-color: rgb(246,154,55) ;
+    border-radius: 5px;
+}
+
+/* CSS CAROUSEL
 .titulo-foto1{
     background-color: transparent;
 }
@@ -44,3 +61,4 @@ img {
 .car-texto1{
     padding-right: 4px;
 }
+*/
