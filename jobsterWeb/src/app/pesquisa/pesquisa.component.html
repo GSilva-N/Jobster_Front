@@ -55,14 +55,51 @@
                     </div>
                 </div>
 
+                <!--Cargos-->
                 <div class="tab-pane fade" id="cargos" role="tabpanel" aria-labelledby="nav-postagens-tab">
                     <div class="row mt-3 mb-3">
                         <div class="col-md-10 pr-0">
-                            <input class="form-control w-100" type="search" placeholder="Pesquisar por Cargo"
-                                aria-label="Pesquisar">
+                            <input class="form-control w-100" type="search" placeholder="Pesquisar por Cargos"
+                                aria-label="Pesquisar" [(ngModel)]="tituloTema">
                         </div>
                         <div class="col-md-2 pl-0">
-                            <button class="btn btn-outline-success ml-1 w-100" type="button">Pesquisar</button>
+                            <button class="btn btn-outline-success ml-1 w-100" type="button"
+                                (click)="findByTituloTema()">Pesquisar</button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12" *ngFor="let item of listaTemas">
+                            <div *ngFor="let post of item.postagem">
+                                <div class="card mt-5">
+                                    <div class="card-header">
+                                        <div class="row d-flex align-items-center">
+                                            <div class="col-md-8">
+                                                <h5 class="card-title">{{post.contato}}</h5>
+                                                <small>{{item.titulo}}</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>{{post.modalidade}}</p>
+                                        <small>{{post.portfolio}}</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Modalidade-->
+                <div class="tab-pane fade" id="modalidade" role="tabpanel" aria-labelledby="nav-postagens-tab">
+                    <div class="row mt-3 mb-3">
+                        <div class="col-md-10 pr-0">
+                            <input class="form-control w-100" type="search" placeholder="Pesquisar por Modalidade"
+                                aria-label="Pesquisar" [(ngModel)]="modalidade">
+                        </div>
+                        <div class="col-md-2 pl-0">
+                            <button class="btn btn-outline-success ml-1 w-100" type="button"
+                                (click)="findByModalidadePostagem()">Pesquisar</button>
                         </div>
                     </div>
 

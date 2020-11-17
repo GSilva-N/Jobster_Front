@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
+import { User } from '../model/User';
 import { AlertasService } from '../service/alertas.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
@@ -20,6 +21,9 @@ export class MeuPerfilComponent implements OnInit {
   tema: Tema = new Tema()
   listaTemas: Tema[]
   idTema: number
+
+  usuario: User = new User()
+  nomeUsuario: string
 
 
   constructor(

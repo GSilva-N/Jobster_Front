@@ -17,7 +17,6 @@ export class PesquisaComponent implements OnInit {
   listaPostagens: Postagem[]
   modalidade: string
 
-
   tema: Tema = new Tema()
   listaTemas: Tema[]
   tituloTema: string
@@ -50,7 +49,7 @@ export class PesquisaComponent implements OnInit {
   }
 
   findByModalidadePostagem() {
-    if (this.modalidade == '') {
+    if (this.modalidade === '') {
       this.findAllPostagens()
     } else {
       this.postagemService.getByModalidadePostagem(this.modalidade).subscribe((resp: Postagem[]) => {
@@ -59,9 +58,8 @@ export class PesquisaComponent implements OnInit {
     }
   }
 
-
   findByTituloTema() {
-    if (this.tituloTema == "") {
+    if (this.tituloTema === "") {
       this.findAllTemas()
     } else {
       this.temaService.getByTituloTema(this.tituloTema).subscribe((resp: Tema[]) => {
