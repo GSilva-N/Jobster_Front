@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from './../../environments/environment.prod';
+
+
 
 
 @Component({
@@ -9,12 +10,19 @@ import { environment } from './../../environments/environment.prod';
 })
 export class PerfilLateralComponent implements OnInit {
 
-  nomeUser = environment.nome
+  user: string
+  link: string
+  linkFoto: string
 
   constructor() { }
 
   ngOnInit() {
+
     window.scroll(0, 0)
+    this.user = localStorage.getItem('user')
+    this.link = localStorage.getItem('link')
+    this.linkFoto = localStorage.getItem('linkFoto')
+
   }
 
 }
