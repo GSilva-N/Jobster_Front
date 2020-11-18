@@ -1,9 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { from } from 'rxjs';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { User } from '../model/User';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faFileSignature } from '@fortawesome/free-solid-svg-icons';
+import { faBook } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-pesquisa',
@@ -12,6 +20,12 @@ import { TemaService } from '../service/tema.service';
 })
 export class PesquisaComponent implements OnInit {
 
+  faUser = faUser
+  faPhone = faPhone
+  faFileSignature = faFileSignature
+  faBook = faBook
+  faEnvelope = faEnvelope
+  faSearch = faSearch
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
@@ -21,7 +35,6 @@ export class PesquisaComponent implements OnInit {
   listaTemas: Tema[]
   tituloTema: string
 
-  listaUser: User[]
 
   constructor(
     private postagemService: PostagemService,

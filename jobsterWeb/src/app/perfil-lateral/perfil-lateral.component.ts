@@ -9,6 +9,8 @@ import { environment } from './../../environments/environment.prod';
 })
 export class PerfilLateralComponent implements OnInit {
 
+  nomeUser = environment.nome
+
   constructor() { }
 
   ngOnInit() {

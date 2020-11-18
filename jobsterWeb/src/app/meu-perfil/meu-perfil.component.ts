@@ -22,9 +22,6 @@ export class MeuPerfilComponent implements OnInit {
   listaTemas: Tema[]
   idTema: number
 
-  usuario: User = new User()
-  nomeUsuario: string
-
 
   constructor(
     private postagemService: PostagemService,
