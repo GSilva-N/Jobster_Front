@@ -87,6 +87,13 @@
     list-style-type: none;
 }
 
+.btn-login {
+    background: #F69A37;
+    color: #fff;
+    font-weight: 600;
+}
+
+
 /* CSS CAROUSEL
 .titulo-foto1{
     background-color: transparent;
