@@ -1,5 +1,5 @@
 .bg{
-    background: linear-gradient(to bottom, rgba(white, 0.5) 0%, rgba(246, 154, 55, 0.88) 100%)
+    background: linear-gradient(to bottom, rgba(114, 116, 116, 0.5) 0%, rgba(246, 154, 55, 0.88) 100%)!important;
 }
 
 .parallax {
@@ -14,26 +14,31 @@
 
 
 .jumbotron2{
-    background-color: whitesmoke;
+    background: linear-gradient(to bottom, rgba(114, 116, 116, 0.5) 0%, rgba(246, 154, 55, 0.88) 100%)!important;
     height: 500px;
 }
 .jumbo-texto{
     font-size: larger;
+    
   
 }
 .jumbo-texto2{
     font-size: x-large;
     font-weight: bold;
-    ;
+    
+  
 }
 
-.jumbo-titulo1{
+.jumbotron-titulo1{
   text-color: rgb(246,154,55);
 }
 
 .card-title{
    
 }
+.jumbotron1{
+    color: #000000;
+    }
 
 
 .btn-sobre{
@@ -41,24 +46,3 @@
     border-radius: 5px;
 }
 
-/* CSS CAROUSEL
-.titulo-foto1{
-    background-color: transparent;
-}
-
-.titulo-foto3{
-    text-color: rgb(246,154,55);
-}
-.texto-foto1, .texto-foto2, .texto-foto3{
-    background-color: rgba(246, 154, 55, 0.831);
-    
-}
-
-img {
-    width: 1280px;
-    height: 600px;
-}
-.car-texto1{
-    padding-right: 4px;
-}
-*/
