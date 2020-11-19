@@ -1,3 +1,5 @@
+import { faStar, faTimes } from '@fortawesome/free-solid-svg-icons';
+import {faHandsHelping} from '@fortawesome/free-solid-svg-icons';
 import { Component, OnInit } from '@angular/core';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
@@ -21,6 +23,9 @@ export class FeedComponent implements OnInit {
 
   listaPostagens: Postagem[]
   tema: Tema = new Tema()
+  faTimes= faTimes 
+  faHandsHelping = faHandsHelping
+  faStar = faStar
 
   constructor(private postagemService: PostagemService) { }
 

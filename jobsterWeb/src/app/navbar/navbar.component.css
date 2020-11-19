@@ -18,3 +18,7 @@ a {
 .form-control {
     width: 400px;
 }
+
+.navbar-brand:hover {
+  color:  rgb(246, 154, 55);
+}

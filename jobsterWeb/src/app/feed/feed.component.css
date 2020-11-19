@@ -1,9 +1,12 @@
 /*#F69A37 - laranja titulos e botões*/
 
 
-
+.fa-icon{
+    background-color: rgba(246, 154, 55);
+}
 .bg{
-    background: linear-gradient(to bottom, rgba(114, 116, 116, 0.5) 0%, rgba(246, 154, 55, 0.88) 100%)
+    background: linear-gradient(to bottom, rgba(114, 116, 116, 0.5) 0%, rgba(246, 154, 55, 0.88) 100%), url(/assets/jobster-grid3.png);
+    
 }
 .card-header{
     background: #F69A37
