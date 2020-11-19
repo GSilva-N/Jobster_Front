@@ -4,6 +4,10 @@ import { Component, OnInit } from '@angular/core';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { PostagemService } from '../service/postagem.service';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
+
 
 
 @Component({
@@ -12,6 +16,10 @@ import { PostagemService } from '../service/postagem.service';
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit {
+
+  faCheck = faCheck
+  faTimes = faTimes
+
 
   listaPostagens: Postagem[]
   tema: Tema = new Tema()

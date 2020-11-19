@@ -14,7 +14,13 @@
                         <form>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">E-mail</label>
-                                <input type="text" class="form-control" name="contato" id="exampleFormControlInput1" [(ngModel)]='postagem.contato'>
+                                <input type="text" class="form-control" name="contato" id="exampleFormControlInput1"
+                                    [(ngModel)]='postagem.contato'>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Telefone</label>
+                                <input type="text" class="form-control" name="telefone" id="exampleFormControlInput1"
+                                    [(ngModel)]='postagem.telefone'>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Portfólio</label>
@@ -28,9 +34,9 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="text" for="tema">Escolha um tema ou <a
-                                        routerLink="/cadastrar-tema">Cadastre
-                                        um novo</a></label>
+                                <label class="text" for="tema">Escolha uma Profissão ou<a routerLink="/cadastro-tema">
+                                        Cadastre
+                                        uma nova</a></label>
                                 <select name="tema" id='tema' [(ngModel)]="idTema" (change)="findByIdTema()"
                                     class="form-control">
                                     <option *ngFor="let item of listaTemas" value={{item.id}}>
@@ -39,12 +45,6 @@
                                 </select>
                             </div>
 
-
-                            <div class="form-group">
-                                <label for="exampleFormControlFile1">Inserir Imagem</label>
-                                <input type="file" name="imagem" class="form-control-file" id="exampleFormControlFile1"
-                                    [(ngModel)]='postagem.imagem'>
-                            </div>
                         </form>
                         <a class="btn btn-login" (click)='publicar()'>Salvar</a>
                     </div>

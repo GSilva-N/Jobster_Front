@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
+import { User } from '../model/User';
 import { AlertasService } from '../service/alertas.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
@@ -20,6 +22,11 @@ export class PutPostagemComponent implements OnInit {
   tema: Tema = new Tema()
   listaTemas: Tema[]
   idTema: number
+
+  usuario: User = new User()
+  nomeUser: string
+
+
 
   constructor(
     private temaService: TemaService,
@@ -43,6 +50,7 @@ export class PutPostagemComponent implements OnInit {
   salvar() {
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
+
 
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp

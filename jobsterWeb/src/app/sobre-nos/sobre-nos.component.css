@@ -4,25 +4,25 @@
 
 .parallax {
     background-image: url(https://www.nappy.co/wp-content/uploads/2017/06/olu-eletu-134760.jpg);
-
-    min-height: 450px; 
+    min-height: 450px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
-
+}
 
 .jumbotron2{
     background: linear-gradient(to bottom, rgba(114, 116, 116, 0.5) 0%, rgba(246, 154, 55, 0.88) 100%)!important;
     height: 500px;
 }
-.jumbo-texto{
+
+.jumbo-texto {
     font-size: larger;
     
   
 }
-.jumbo-texto2{
+
+.jumbo-texto2 {
     font-size: x-large;
     font-weight: bold;
     
@@ -33,16 +33,63 @@
   text-color: rgb(246,154,55);
 }
 
-.card-title{
-   
+.card-title {}
+
+.btn-sobre {
+    background-color: rgb(246, 154, 55);
+    border-radius: 5px;
 }
 .jumbotron1{
     color: #000000;
     }
 
+.nossas-fotos {
+    height: 100px;
+    width: 100px;
+    border-radius: 200px;
+}
 
-.btn-sobre{
-    background-color: rgb(246,154,55) ;
-    border-radius: 5px;
+.flip-card {
+    background-color: transparent;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-back {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 75%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-back {
+    background-color: rgba(255, 255, 255, 0.637);
+    transform: rotateY(180deg);
+}
+
+.flip-card-back>ul {
+    color: white;
+    list-style-type: none;
 }
 

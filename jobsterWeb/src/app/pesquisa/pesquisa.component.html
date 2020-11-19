@@ -2,133 +2,190 @@
     <app-navbar></app-navbar>
 </div>
 <div class="bg">
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <app-perfil-lateral></app-perfil-lateral>
-        </div>
-        <div class="col-md-8 mt-4">
-            <nav class="d-flex justify-content-center">
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-home-tab"
-                        data-toggle="tab" href="#empresas" role="tab" aria-controls="nav-home"
-                        aria-selected="true">Empresas</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <app-perfil-lateral></app-perfil-lateral>
+            </div>
 
-                    <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-profile-tab" data-toggle="tab"
-                        href="#cargos" role="tab" aria-controls="nav-profile" aria-selected="false">Cargos
-                    </a>
-                    <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-profile-tab" data-toggle="tab"
-                        href="#modalidade" role="tab" aria-controls="nav-profile" aria-selected="false">Modalidade</a>
-                </div>
-            </nav>
-            <!--Empresas-->
-            <div class="tab-content" id="nav-tabContent">
+            <div class="col-md-8 mt-4">
+                <nav class="d-flex justify-content-center">
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-home-tab"
+                            data-toggle="tab" href="#empresas" role="tab" aria-controls="nav-home"
+                            aria-selected="true">Empresas</a>
 
-                <div class="tab-pane fade show active" id="empresas" role="tabpanel"
-                    aria-labelledby="nav-postagens-tab">
-                    <div class="row mt-3 mb-3">
-                        <div class="col-md-10 pr-0">
-                            <input class="form-control w-100" type="search" placeholder="Pesquisar postagem"
-                                aria-label="Pesquisar">
-                        </div>
-                        <div class="col-md-2 pl-0">
-                            <button class="btn btn-outline-light ml-1 w-100" type="button">Pesquisar</button>
-                        </div>
+                        <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-profile-tab"
+                            data-toggle="tab" href="#cargos" role="tab" aria-controls="nav-profile"
+                            aria-selected="false">Cargos
+                        </a>
+                        <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-profile-tab"
+                            data-toggle="tab" href="#modalidade" role="tab" aria-controls="nav-profile"
+                            aria-selected="false">Modalidade</a>
                     </div>
+                </nav>
+                <!--Empresas-->
+                <div class="tab-content" id="nav-tabContent">
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card mt-5" *ngFor="let item of listaPostagens">
-                                <div class="card-header">
-                                    <div class="row d-flex align-items-center">
-                                        <div class="col-md-8">
-                                            <h5 class="card-title">{{item.contato}}</h5>
-                                            <small>{{item.tema.titulo}}</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p>{{item.modalidade}}</p>
-                                    <small>{{item.portfolio}}</small>
-                                </div>
+                    <div class="tab-pane fade show active" id="empresas" role="tabpanel"
+                        aria-labelledby="nav-postagens-tab">
+                        <div class="row mt-3 mb-3">
+                            <div class="col-md-10 pr-0">
+                                <input class="form-control w-100" type="search" placeholder="Pesquisar postagem"
+                                    aria-label="Pesquisar">
+                            </div>
+                            <div class="col-md-2 pl-0">
+                                <button class="btn btn-outline-light ml-1 w-100" type="button">
+                                    <fa-icon [icon]="faSearch"></fa-icon>
+                                </button>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <!--Cargos-->
-                <div class="tab-pane fade" id="cargos" role="tabpanel" aria-labelledby="nav-postagens-tab">
-                    <div class="row mt-3 mb-3">
-                        <div class="col-md-10 pr-0">
-                            <input class="form-control w-100" type="search" placeholder="Pesquisar por Cargos"
-                                aria-label="Pesquisar" [(ngModel)]="tituloTema">
-                        </div>
-                        <div class="col-md-2 pl-0">
-                            <button class="btn btn-outline-light ml-1 w-100" type="button"
-                                (click)="findByTituloTema()">Pesquisar</button>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12" *ngFor="let item of listaTemas">
-                            <div *ngFor="let post of item.postagem">
-                                <div class="card mt-5">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card mt-5" *ngFor="let item of listaPostagens">
                                     <div class="card-header">
                                         <div class="row d-flex align-items-center">
                                             <div class="col-md-8">
-                                                <h5 class="card-title">{{post.contato}}</h5>
-                                                <small>{{item.titulo}}</small>
+                                                <h5 class="card-title">
+                                                    <fa-icon [icon]="faUser"></fa-icon>
+                                                </h5>
+                                                <small>{{item.tema.titulo}}</small>
+
                                             </div>
                                         </div>
                                     </div>
                                     <div class="card-body">
-                                        <p>{{post.modalidade}}</p>
-                                        <small>{{post.portfolio}}</small>
+                                        <p>
+                                            <fa-icon [icon]="faEnvelope"></fa-icon> {{item.contato}}
+                                        </p>
+                                        <p>
+                                            <fa-icon [icon]="faPhone"></fa-icon> {{item.telefone}}
+                                        </p>
+                                        <p>
+                                            <fa-icon [icon]="faFileSignature"></fa-icon> {{item.modalidade}}
+                                        </p>
+                                        <p>
+                                            <fa-icon [icon]="faBook"></fa-icon>
+                                        </p>
+                                        <small>
+                                            {{item.portfolio}}
+                                        </small>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!--Modalidade-->
-                <div class="tab-pane fade" id="modalidade" role="tabpanel" aria-labelledby="nav-postagens-tab">
-                    <div class="row mt-3 mb-3">
-                        <div class="col-md-10 pr-0">
-                            <input class="form-control w-100" type="search" placeholder="Pesquisar por Modalidade"
-                                aria-label="Pesquisar" [(ngModel)]="modalidade">
+                    <!--Cargos-->
+                    <div class="tab-pane fade" id="cargos" role="tabpanel" aria-labelledby="nav-postagens-tab">
+                        <div class="row mt-3 mb-3">
+                            <div class="col-md-10 pr-0">
+                                <input class="form-control w-100" type="search" placeholder="Pesquisar por Cargos"
+                                    aria-label="Pesquisar" [(ngModel)]="tituloTema">
+                            </div>
+                            <div class="col-md-2 pl-0">
+                                <button class="btn btn-outline-success ml-1 w-100" type="button"
+                                    (click)="findByTituloTema()">
+                                    <fa-icon [icon]="faSearch"></fa-icon>
+                                </button>
+                            </div>
                         </div>
-                        <div class="col-md-2 pl-0">
-                            <button class="btn btn-outline-light ml-1 w-100" type="button"
-                                (click)="findByModalidadePostagem()">Pesquisar</button>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card mt-5" *ngFor="let item of listaPostagens">
-                                <div class="card-header">
-                                    <div class="row d-flex align-items-center">
-                                        <div class="col-md-8">
-                                            <h5 class="card-title">{{item.contato}}</h5>
-                                            <small>{{item.tema.titulo}}</small>
+                        <div class="row">
+                            <div class="col-md-12" *ngFor="let item of listaTemas">
+                                <div *ngFor="let post of item.postagem">
+                                    <div class="card mt-5">
+                                        <div class="card-header">
+                                            <div class="row d-flex align-items-center">
+                                                <div class="col-md-8">
+                                                    <h5 class="card-title">
+                                                        <fa-icon [icon]="faUser"></fa-icon>
+                                                        {{post.contato}}
+                                                    </h5>
+                                                    <small>{{item.titulo}}</small>
+                                                </div>
+                                            </div>
                                         </div>
-
+                                        <div class="card-body">
+                                            <p>
+                                                <fa-icon [icon]="faEnvelope"></fa-icon> {{post.contato}}
+                                            </p>
+                                            <p>
+                                                <fa-icon [icon]="faPhone"></fa-icon> {{post.telefone}}
+                                            </p>
+                                            <p>
+                                                <fa-icon [icon]="faFileSignature"></fa-icon> {{post.modalidade}}
+                                            </p>
+                                            <p>
+                                                <fa-icon [icon]="faBook"></fa-icon>
+                                            </p>
+                                            <small>
+                                                {{post.portfolio}}
+                                            </small>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="card-body">
-                                    <p>{{item.modalidade}}</p>
-                                    <small>{{item.portfolio}}</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Modalidade-->
+                    <div class="tab-pane fade" id="modalidade" role="tabpanel" aria-labelledby="nav-postagens-tab">
+                        <div class="row mt-3 mb-3">
+                            <div class="col-md-10 pr-0">
+                                <input class="form-control w-100" type="search" placeholder="Pesquisar por Modalidade"
+                                    aria-label="Pesquisar" [(ngModel)]="modalidade">
+                            </div>
+                            <div class="col-md-2 pl-0">
+                                <button class="btn btn-outline-success ml-1 w-100" type="button"
+                                    (click)="findByModalidadePostagem()">
+                                    <fa-icon [icon]="faSearch"></fa-icon>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card mt-5" *ngFor="let item of listaPostagens">
+                                    <div class="card-header">
+                                        <div class="row d-flex align-items-center">
+                                            <div class="col-md-8">
+                                                <h5 class="card-title">
+                                                    <fa-icon [icon]="faUser"></fa-icon>
+                                                    Nome
+                                                </h5>
+                                                <small>{{item.tema.titulo}}</small>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>
+                                            <fa-icon [icon]="faEnvelope"></fa-icon> {{item.contato}}
+                                        </p>
+                                        <p>
+                                            <fa-icon [icon]="faPhone"></fa-icon> {{item.telefone}}
+                                        </p>
+                                        <p>
+                                            <fa-icon [icon]="faFileSignature"></fa-icon> {{item.modalidade}}
+                                        </p>
+                                        <p>
+                                            <fa-icon [icon]="faBook"></fa-icon>
+                                        </p>
+                                        <small>
+                                            {{item.portfolio}}
+                                        </small>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
-</div>
 </div>
 <div>
     <app-footer></app-footer>

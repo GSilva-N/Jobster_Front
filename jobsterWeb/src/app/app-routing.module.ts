@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'deletar-tema/:id', component: DeleteTemaComponent },
   { path: 'editar-postagem/:id', component: PutPostagemComponent },
   { path: 'deletar-postagem/:id', component: DeletePostagemComponent },
-  { path: 'sobre-nos', component: SobreNosComponent},
+  { path: 'sobre-nos', component: SobreNosComponent },
   { path: 'pesquisa', component: PesquisaComponent }
 
 ];

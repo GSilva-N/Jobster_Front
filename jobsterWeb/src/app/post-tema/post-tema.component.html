@@ -26,7 +26,7 @@
 
             <hr>
 
-            <div class="row mt-5">
+            <div class="row mt-5 mb-3">
                 <div class="col-md-12">
                     <h4 class="text-center ">Lista de áreas profissionais</h4>
                 </div>
@@ -35,15 +35,13 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Descrição</th>
+                        <th scope="col">Cargo</th>
                         <th scope="col" class="d-flex justify-content-end">Modificações</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor='let item of listaTemas'>
-                        <th scope="row">{{item.id}}</th>
-                        <td>{{item.descricao}}</td>
+                        <td>{{item.titulo}}</td>
                         <td class="d-flex justify-content-end">
                             <a class="btn btn-info mr-3" [routerLink]="['/editar-tema', item.id]">Editar</a>
                             <a class="btn btn-danger" [routerLink]="['/deletar-tema', item.id]">Apagar</a>
