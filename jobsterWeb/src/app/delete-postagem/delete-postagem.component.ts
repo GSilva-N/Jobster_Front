@@ -1,9 +1,16 @@
-import { Route } from '@angular/compiler/src/core';
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Postagem } from '../model/Postagem';
 import { AlertasService } from '../service/alertas.service';
 import { PostagemService } from '../service/postagem.service';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faFileSignature } from '@fortawesome/free-solid-svg-icons';
+import { faBook } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-delete-postagem',
@@ -12,9 +19,14 @@ import { PostagemService } from '../service/postagem.service';
 })
 export class DeletePostagemComponent implements OnInit {
 
+  faUser = faUser
+  faPhone = faPhone
+  faFileSignature = faFileSignature
+  faBook = faBook
+  faEnvelope = faEnvelope
+  faSearch = faSearch
+
   postagem: Postagem = new Postagem()
-
-
 
   constructor(
     private postagemService: PostagemService,

@@ -48,12 +48,20 @@
                                         <div class="row d-flex align-items-center">
                                             <div class="col-md-8">
                                                 <h5 class="card-title">
-                                                    <fa-icon [icon]="faUser"></fa-icon>
+                                                    <fa-icon [icon]="faUser"></fa-icon> {{item.tema.titulo}}
                                                 </h5>
-                                                <small>{{item.tema.titulo}}</small>
+                                            </div>
+                                            <div class="col-md-4 d-flex justify-content-end">
+                                                <fa-icon class="p-2 edit" [icon]="faEdit"
+                                                    [routerLink]="['/editar-postagem', item.id]">
+                                                </fa-icon>
+                                                <fa-icon class="p-2 edit" [icon]="faTrash"
+                                                    [routerLink]="['/deletar-postagem', item.id]">
+                                                </fa-icon>
 
                                             </div>
                                         </div>
+
                                     </div>
                                     <div class="card-body">
                                         <p>
@@ -85,7 +93,7 @@
                                     aria-label="Pesquisar" [(ngModel)]="tituloTema">
                             </div>
                             <div class="col-md-2 pl-0">
-                                <button class="btn btn-outline-success ml-1 w-100" type="button"
+                                <button class="btn btn-outline-light ml-1 w-100" type="button"
                                     (click)="findByTituloTema()">
                                     <fa-icon [icon]="faSearch"></fa-icon>
                                 </button>
@@ -100,10 +108,17 @@
                                             <div class="row d-flex align-items-center">
                                                 <div class="col-md-8">
                                                     <h5 class="card-title">
-                                                        <fa-icon [icon]="faUser"></fa-icon>
-                                                        {{post.contato}}
+                                                        <fa-icon [icon]="faUser"></fa-icon> {{item.titulo}}
                                                     </h5>
-                                                    <small>{{item.titulo}}</small>
+                                                </div>
+                                                <div class="col-md-4 d-flex justify-content-end">
+                                                    <fa-icon class="p-2 edit" [icon]="faEdit"
+                                                        [routerLink]="['/editar-postagem', item.id]">
+                                                    </fa-icon>
+                                                    <fa-icon class="p-2 edit" [icon]="faTrash"
+                                                        [routerLink]="['/deletar-postagem', item.id]">
+                                                    </fa-icon>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -138,7 +153,7 @@
                                     aria-label="Pesquisar" [(ngModel)]="modalidade">
                             </div>
                             <div class="col-md-2 pl-0">
-                                <button class="btn btn-outline-success ml-1 w-100" type="button"
+                                <button class="btn btn-outline-light ml-1 w-100" type="button"
                                     (click)="findByModalidadePostagem()">
                                     <fa-icon [icon]="faSearch"></fa-icon>
                                 </button>
@@ -152,10 +167,17 @@
                                         <div class="row d-flex align-items-center">
                                             <div class="col-md-8">
                                                 <h5 class="card-title">
-                                                    <fa-icon [icon]="faUser"></fa-icon>
-                                                    Nome
+                                                    <fa-icon [icon]="faUser"></fa-icon> {{item.tema.titulo}}
                                                 </h5>
-                                                <small>{{item.tema.titulo}}</small>
+                                            </div>
+                                            <div class="col-md-4 d-flex justify-content-end">
+
+                                                <fa-icon class="p-2 edit" [icon]="faEdit"
+                                                    [routerLink]="['/editar-postagem', item.id]">
+                                                </fa-icon>
+                                                <fa-icon class="p-2 edit" [icon]="faTrash"
+                                                    [routerLink]="['/deletar-postagem', item.id]">
+                                                </fa-icon>
 
                                             </div>
                                         </div>

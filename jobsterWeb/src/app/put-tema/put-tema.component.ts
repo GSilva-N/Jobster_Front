@@ -14,7 +14,6 @@ export class PutTemaComponent implements OnInit {
 
   tema: Tema = new Tema()
 
-
   constructor(
     private temaService: TemaService,
     private router: Router,

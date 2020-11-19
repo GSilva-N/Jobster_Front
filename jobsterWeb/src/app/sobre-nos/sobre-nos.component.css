@@ -90,8 +90,12 @@
     list-style-type: none;
 }
 
-.btn-login {
+.btn-cadastrar {
     background: #F69A37;
     color: #fff;
     font-weight: 600;
+}
+
+.btn-cadastrar:hover {
+    border-color: white;
 }

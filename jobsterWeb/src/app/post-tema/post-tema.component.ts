@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { Tema } from '../model/Tema';
 import { AlertasService } from '../service/alertas.service';
 import { TemaService } from '../service/tema.service';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-post-tema',
@@ -10,6 +13,9 @@ import { TemaService } from '../service/tema.service';
   styleUrls: ['./post-tema.component.css']
 })
 export class PostTemaComponent implements OnInit {
+
+  faTrash = faTrash
+  faEdit = faEdit
 
   tema: Tema = new Tema()
   listaTemas: Tema[]
@@ -37,12 +43,12 @@ export class PostTemaComponent implements OnInit {
   }
 
   cadastrar() {
-    if (this.tema.titulo == null) {
+    if (this.tema.titulo == null || this.tema.descricao == null) {
       this.alert.showAlertDanger('Preencha o campo titulo')
     } else {
       this.temaService.postTema(this.tema).subscribe((resp: Tema) => {
         this.tema = resp
-        this.router.navigate(['/feed'])
+        this.router.navigate(['/meu-perfil'])
         this.alert.showAlertSuccess('Cadastrado com sucesso!')
       })
     }

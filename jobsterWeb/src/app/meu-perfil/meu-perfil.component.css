@@ -1,19 +1,13 @@
-
-
 .bg {
-    
- background: linear-gradient(to bottom, rgba(114, 116, 116, 0.5) 0%, rgba(246, 154, 55, 0.88) 100%)
+    background: linear-gradient(to bottom, rgba(114, 116, 116, 0.5) 0%, rgba(246, 154, 55, 0.88) 100%)
 }
-
 
 .card {
     background-color: rgb(255, 255, 255);
 }
-
 
 .btn-login {
     background: #F69A37;
     color: #fff;
     font-weight: 600;
 }
-

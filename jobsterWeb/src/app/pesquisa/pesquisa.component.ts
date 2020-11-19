@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { from } from 'rxjs';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
-import { User } from '../model/User';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
@@ -11,6 +9,8 @@ import { faFileSignature } from '@fortawesome/free-solid-svg-icons';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -26,6 +26,8 @@ export class PesquisaComponent implements OnInit {
   faBook = faBook
   faEnvelope = faEnvelope
   faSearch = faSearch
+  faTrash = faTrash
+  faEdit = faEdit
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]

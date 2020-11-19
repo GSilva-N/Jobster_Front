@@ -1,3 +1,7 @@
-.bg{
+.bg {
     background: linear-gradient(to bottom, rgba(114, 116, 116, 0.5) 0%, rgba(246, 154, 55, 0.88) 100%)
+}
+
+.delete {
+    background: rgb(235, 235, 235);
 }
