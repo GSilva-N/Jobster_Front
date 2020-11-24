@@ -41,8 +41,8 @@
 }
 
 .nossas-fotos {
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     border-radius: 200px;
 }
 
@@ -98,4 +98,69 @@
 
 .btn-cadastrar:hover {
     border-color: white;
+}
+
+.card {
+    position: relative;
+    height: 300px
+}
+
+.card1 .card-body .card-text {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    color: black;
+    opacity: 0;
+    max-height: 0;
+    transition: all 0.3s ease;
+}
+
+.card1:hover {
+    height: 550px;
+}
+
+.card1:hover .card-body .card-text {
+    transition: all 0.3s ease;
+    opacity: 1;
+    max-height: 40px;
+}
+
+.card2 .card-body .card-text {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    color: black;
+    opacity: 0;
+    max-height: 0;
+    transition: all 0.3s ease;
+}
+
+.card2:hover {
+    height: 450px;
+}
+
+.card2:hover .card-body .card-text {
+    transition: all 0.3s ease;
+    opacity: 1;
+    max-height: 40px;
+}
+
+.card3 .card-body .card-text {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    color: black;
+    opacity: 0;
+    max-height: 0;
+    transition: all 0.3s ease;
+}
+
+.card3:hover {
+    height: 350px;
+}
+
+.card3:hover .card-body .card-text {
+    transition: all 0.3s ease;
+    opacity: 1;
+    max-height: 40px;
 }

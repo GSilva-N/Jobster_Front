@@ -15,3 +15,7 @@ thead {
     color: white;
     font-weight: bold;
 }
+
+fa-icon:hover {
+    cursor: pointer;
+}

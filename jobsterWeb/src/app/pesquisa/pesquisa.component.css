@@ -8,4 +8,5 @@
 
 .edit:hover {
     color: rgb(246, 154, 55);
+    cursor: pointer;
 }
